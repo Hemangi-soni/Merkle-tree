@@ -10,58 +10,61 @@ A hash function is any function that can be used to map data of arbitrary size t
 
 ## Time and Space complexity of Merkle Tree
 
-1. The time complexity for searching is O(log n) because the time complexity for searching in a binary tree is O(log n).
-2. The time complexity for insertion is O(log n).
-3. The time complexity for deletion is O(log n).
-4. The space complexity is O( n ).
+- The time complexity for searching is O(log n) because the time complexity for searching in a binary tree is O(log n).
+- The time complexity for insertion is O(log n).
+- The time complexity for deletion is O(log n).
+- The space complexity is O( n ).
 
+
+## Artitechture Diagram
+![](https://github.com/Hemangi-soni/Merkle-tree/blob/main/artitechture%20of%20merkle%20tree.jpg)
 ## Algorithm
 
 ## Algorithm of find function in Merkle tree
 
-1. We will take the tree and key as parameters.
-2. If the tree is null then we will return null.
-3. If the tree->key is equal to the key we will return the tree.
-4. If the key is smaller than tree->key then we will return find(tree->left, key)
+- We will take the tree and key as parameters.
+- If the tree is null then we will return null.
+- If the tree->key is equal to the key we will return the tree.
+- If the key is smaller than tree->key then we will return find(tree->left, key)
 else return find(tree->right, key)
 
 
 ## Algorithm to add a node in Merkle tree.
-1.We will take key and value as parameters.
-2.Take the hash(key) and store it in a variable called index.
+- We will take key and value as parameters.
+- Take the hash(key) and store it in a variable called index.
 store (struct node*) arr[ index ].head in a pointer called tree of datatype node.
-3.create a new node with its key as key and value as value and both links as null.
-4.If the tree is null then assign the new node to the head and increment the size by 1.
-5.If the tree is not null then we will check if the key is already present in the tree using the find function.
-6.If the key is already present in the tree then we will update the value. Step 8: If it is not present in the tree then we will use the insert function to insert the element.
+- create a new node with its key as key and value as value and both links as null.
+- If the tree is null then assign the new node to the head and increment the size by 1.
+- If the tree is not null then we will check if the key is already present in the tree using the find function.
+- If the key is already present in the tree then we will update the value. Step 8: If it is not present in the tree then we will use the insert function to insert the element.
 ## Algorithm of insert function.
-1. It will take tree and item pointers of node data type as parameters.
-2. If item->key is smaller than tree->key and tree->left is null then assign the item to tree->left.
-3. If item->key is smaller than tree->key and tree->left is not null then call insert function with tree->left and item as parameters.
-4. If item->key is greater than tree->key and tree->right is null then assign the item to tree->right.
-5. If item->key is greater than tree->key and tree->right is not null then call insert function with tree->right and item as parameters.
+- It will take tree and item pointers of node data type as parameters.
+- If item->key is smaller than tree->key and tree->left is null then assign the item to tree->left.
+- If item->key is smaller than tree->key and tree->left is not null then call insert function with tree->left and item as parameters.
+- If item->key is greater than tree->key and tree->right is null then assign the item to tree->right.
+- If item->key is greater than tree->key and tree->right is not null then call insert function with tree->right and item as parameters.
 ## Algorithm to delete a node in Merkle tree.
-1. We will take a key as a parameter.
-2. Take the hash(key) and store it in a variable called index.
+- We will take a key as a parameter.
+- Take the hash(key) and store it in a variable called index.
 store (struct node*) arr[index].head in a pointer called tree of datatype node.
-3. If the tree is null then the key is not present.
-4. If the tree is not null then we will check if the key is already present in the tree using the find function.
-5. If the find function returns null then the key is not present in the tree.
-6. If it is not null then we will use the remove function to delete the element.
+- If the tree is null then the key is not present.
+- If the tree is not null then we will check if the key is already present in the tree using the find function.
+- If the find function returns null then the key is not present in the tree.
+- If it is not null then we will use the remove function to delete the element.
 ## Algorithm of remove function.
-1. It will take tree and key as parameters.
-2. If the tree is null then return null.
-3.If the key is smaller than the tree->key then tree->left is equal to remove(tree->left, key) and return tree.
-4. If the key is greater than the tree->key then tree->right is equal to remove(tree->right, key) and return tree.
+- It will take tree and key as parameters.
+- If the tree is null then return null.
+- If the key is smaller than the tree->key then tree->left is equal to remove(tree->left, key) and return tree.
+- If the key is greater than the tree->key then tree->right is equal to remove(tree->right, key) and return tree.
 else if the tree->left is equal to null and the tree->right is equal to null then decrement the size and return tree->left.
 else if the tree->left is not equal to null and the tree->right is equal to null then decrement the size and return tree->left.
 else if tree->left is equal to null and tree->right is not equal to null then decrement the size and return tree->right.
 else assign tree->left to a pointer called left of data type node.
-5.While left->right is not equal to null, left is equal to left->right.
+- While left->right is not equal to null, left is equal to left->right.
 tree->key is equal to left->key.
 tree->value is equal to left->value.
 tree->left is equal to remove(tree->left, tree->key).
-6.Return tree.
+- Return tree.
 
 ## CaesarCipher.java
 
@@ -276,6 +279,9 @@ public String encrypt(String text, final String key) {
 }
 } 
 ```
+## Output
+![](https://github.com/Hemangi-soni/Merkle-tree/blob/main/output.jpg)
 ## References
-
-
+- (https://brilliant.org/wiki/merkle-tree/#:~:text=A%20Merkle%20tree%20is%20a,has%20up%20to%202%20children.)
+- (https://medium.com/@vinayprabhu19/merkel-tree-in-java-b45093c8c6bd)
+- (https://www.geeksforgeeks.org/introduction-to-merkle-tree/ )
