@@ -1,0 +1,2 @@
+INTRODUCTION
+A hash tree or Merkle tree is a tree in which every "leaf" is labelled with the cryptographic hash of a data block, and every node that is not a leaf is labelled with the cryptographic hash of the labels of its child nodes.
